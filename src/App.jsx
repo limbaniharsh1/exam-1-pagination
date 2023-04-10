@@ -54,7 +54,7 @@ function App() {
       <div style={{ textAlign: 'center' }}>
         <button onClick={()=>pre()}>pre</button>
         <button onClick={()=>next()}>next</button>
-        <button onClick={()=>setrnd(rnd+1)}>data</button>
+        <button onClick={()=>setrnd(rnd==10 ? 1 : rnd+1 )}>data</button>
       </div>
     </div>
   );
