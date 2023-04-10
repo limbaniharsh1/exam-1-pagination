@@ -5,7 +5,7 @@ function App() {
 
   let [data, setData] = useState([])
   let [count, setcount] = useState(1)
-  let [rnd,setrnd] = useState(1)
+  let [rnd,setrnd] = useState(5)
 
   useEffect(() => {
     get()
