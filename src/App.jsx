@@ -5,11 +5,11 @@ function App() {
 
   let [data, setData] = useState([])
   let [count, setcount] = useState(1)
-  let [rnd,setrnd]=useState
+  let [rnd,setrnd] = useState(1)
 
   useEffect(() => {
     get()
-  }, [count])
+  }, [count,rnd])
   console.log(count)
   let pre = () => {
     if(count==1){
@@ -24,7 +24,7 @@ function App() {
   }
 
   let get = async () => {          
-    let req = await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants?limit=${rndg}&page=${count}`)
+    let req = await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/getrestaurants?limit=${rnd}&page=${count}`)
     let res = await req.json()
     setData(res.data)
   }
@@ -54,7 +54,7 @@ function App() {
       <div style={{ textAlign: 'center' }}>
         <button onClick={()=>pre()}>pre</button>
         <button onClick={()=>next()}>next</button>
-        <button onClick={setrnd(rnd+1)}>rnd</button>
+        <button onClick={()=>setrnd(rnd+1)}>data</button>
       </div>
     </div>
   );
